@@ -39,7 +39,7 @@ class Matrix(val rowsDim: Int, val colsDim: Int) extends Module {
     */
   // Fill a Vec with your Vector from the previous exercise.
   // The naming conflict is a little unfortunate.
-  val rows = Vec.fill(rowsDim)(Module(new Vector(colsDim)).io)
+  val rows = VecInit(Seq.fill(rowsDim)(Module(new Vector(colsDim)).io))
 
   // When writeEnable is high, use rowIdx to select which row you want to operate on.
   when(io.writeEnable){
